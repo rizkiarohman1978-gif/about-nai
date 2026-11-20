@@ -1,0 +1,1366 @@
+/* ============================================================
+   SPIDER-MAN BIRTHDAY WEBSITE
+   CSS
+   ============================================================ */
+
+/* ============================================================
+   WARNA UTAMA
+   ============================================================ */
+
+:root {
+  --black: #030303;
+
+  --dark: #08090d;
+
+  --dark-blue: #07152e;
+
+  --red: #e50914;
+
+  --red-dark: #8f0008;
+
+  --blue: #0645a5;
+
+  --blue-dark: #021d4d;
+
+  --white: #ffffff;
+
+  --gray: #b7b7b7;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.intro-screen {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: radial-gradient(
+    circle at center,
+    #101d3d 0%,
+    #05070d 55%,
+    #000000 100%
+  );
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.intro-screen.hide {
+  opacity: 0;
+
+  visibility: hidden;
+}
+
+.intro-web {
+  font-size: 100px;
+
+  margin-bottom: 30px;
+
+  animation: webPulse 2s infinite;
+}
+
+@keyframes webPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.intro-location {
+  font-size: 12px;
+
+  letter-spacing: 6px;
+
+  color: #aaa;
+
+  margin-bottom: 20px;
+}
+
+.intro-screen h1 {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(60px, 10vw, 110px);
+
+  letter-spacing: 5px;
+
+  color: var(--red);
+
+  text-shadow: 5px 5px 0 #000;
+}
+
+.intro-text {
+  color: #aaa;
+
+  margin: 20px 0 35px;
+}
+
+.start-button {
+  padding: 15px 28px;
+
+  border: 3px solid var(--white);
+
+  background: var(--red);
+
+  color: white;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transform: skew(-5deg);
+
+  transition: 0.3s;
+
+  box-shadow: 6px 6px 0 #000;
+}
+
+.start-button:hover {
+  background: var(--blue);
+
+  transform: skew(-5deg) translateY(-5px);
+}
+
+/* ============================================================
+   BACKGROUND
+   ============================================================ */
+
+.city-background {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -5;
+
+  overflow: hidden;
+
+  background: linear-gradient(to bottom, #020611 0%, #07152e 55%, #030303 100%);
+}
+
+/* ============================================================
+   BULAN
+   ============================================================ */
+
+.moon {
+  position: absolute;
+
+  width: 120px;
+
+  height: 120px;
+
+  top: 10%;
+
+  right: 10%;
+
+  border-radius: 50%;
+
+  background: #eeeeee;
+
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 70px rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   BINTANG
+   ============================================================ */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: radial-gradient(white 1px, transparent 1px);
+
+  background-size: 100px 100px;
+
+  opacity: 0.4;
+}
+
+/* ============================================================
+   GEDUNG
+   ============================================================ */
+
+.city {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 40%;
+
+  display: flex;
+
+  align-items: flex-end;
+}
+
+.building {
+  position: relative;
+
+  flex: 1;
+
+  background: #050505;
+
+  border-top: 2px solid #111;
+}
+
+.building::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  background-image: radial-gradient(#ffd84d 2px, transparent 2px);
+
+  background-size: 30px 35px;
+
+  opacity: 0.6;
+}
+
+.building-1 {
+  height: 65%;
+}
+
+.building-2 {
+  height: 90%;
+}
+
+.building-3 {
+  height: 55%;
+}
+
+.building-4 {
+  height: 80%;
+}
+
+.building-5 {
+  height: 60%;
+}
+
+.building-6 {
+  height: 75%;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  padding: 20px 6%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Bangers", cursive;
+
+  font-size: 25px;
+}
+
+.logo span {
+  margin-left: 8px;
+}
+
+.music-button {
+  border: 2px solid white;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  color: white;
+
+  padding: 8px 16px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 100px 20px;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+.hero-small {
+  font-size: 14px;
+
+  letter-spacing: 5px;
+
+  color: #ccc;
+}
+
+.comic-badge {
+  display: inline-block;
+
+  background: #ffd400;
+
+  color: black;
+
+  padding: 8px 20px;
+
+  margin-bottom: 25px;
+
+  font-family: "Bangers", cursive;
+
+  transform: rotate(-3deg);
+
+  box-shadow: 5px 5px 0 black;
+}
+
+.hero h1 {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(70px, 13vw, 160px);
+
+  line-height: 0.85;
+
+  margin: 20px 0;
+
+  text-shadow:
+    7px 7px 0 #000,
+    0 0 20px rgba(229, 9, 20, 0.3);
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--red);
+}
+
+.birthday-name {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(35px, 5vw, 60px);
+
+  letter-spacing: 8px;
+
+  color: #1e8fff;
+
+  text-shadow: 4px 4px 0 #000;
+}
+
+.hero-description {
+  color: #ccc;
+
+  line-height: 1.8;
+
+  margin: 25px auto;
+}
+
+.comic-button {
+  display: inline-block;
+
+  padding: 16px 30px;
+
+  margin-top: 20px;
+
+  background: var(--red);
+
+  color: white;
+
+  text-decoration: none;
+
+  border: 3px solid white;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 20px;
+
+  transform: skew(-6deg);
+
+  box-shadow: 7px 7px 0 black;
+
+  transition: 0.3s;
+}
+
+.comic-button:hover {
+  background: var(--blue);
+
+  transform: skew(-6deg) translate(-3px, -5px);
+}
+
+/* ============================================================
+   SPIDER
+   ============================================================ */
+
+.spider {
+  position: absolute;
+
+  top: 0;
+
+  left: 15%;
+
+  animation: spiderSwing 4s ease-in-out infinite;
+}
+
+.spider-body {
+  font-size: 50px;
+}
+
+.web-line {
+  width: 2px;
+
+  height: 150px;
+
+  background: white;
+
+  margin: auto;
+}
+
+@keyframes spiderSwing {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+/* ============================================================
+   WEB DECORATION
+   ============================================================ */
+
+.web-decoration {
+  position: absolute;
+
+  font-size: 150px;
+
+  opacity: 0.15;
+}
+
+.web-left {
+  top: 0;
+
+  left: -20px;
+}
+
+.web-right {
+  top: 0;
+
+  right: -20px;
+
+  transform: rotate(90deg);
+}
+
+/* ============================================================
+   SCROLL
+   ============================================================ */
+
+.scroll-down {
+  position: absolute;
+
+  bottom: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #aaa;
+}
+
+.scroll-down span {
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   GENERAL SECTION
+   ============================================================ */
+
+section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 120px 7%;
+}
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.section-title span {
+  color: var(--red);
+
+  font-family: "Bangers", cursive;
+
+  font-size: 18px;
+
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(45px, 7vw, 80px);
+
+  margin: 10px 0;
+
+  text-shadow: 5px 5px 0 black;
+}
+
+.section-title p {
+  color: #aaa;
+}
+
+/* ============================================================
+   COMIC PANEL
+   ============================================================ */
+
+.comic-section {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.comic-panel {
+  position: relative;
+
+  max-width: 800px;
+
+  padding: 70px 60px;
+
+  text-align: center;
+
+  background: #f2f2e8;
+
+  color: #111;
+
+  border: 6px solid black;
+
+  transform: rotate(-1deg);
+
+  box-shadow: 15px 15px 0 var(--red);
+}
+
+.panel-label {
+  position: absolute;
+
+  top: -25px;
+
+  left: 30px;
+
+  background: var(--red);
+
+  color: white;
+
+  padding: 8px 20px;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 25px;
+
+  transform: rotate(-4deg);
+}
+
+.comic-panel h3 {
+  font-family: "Bangers", cursive;
+
+  font-size: 45px;
+
+  margin-bottom: 30px;
+}
+
+.comic-panel p {
+  line-height: 1.9;
+
+  margin-bottom: 15px;
+}
+
+.panel-heart {
+  font-size: 50px;
+
+  margin-top: 20px;
+}
+
+/* ============================================================
+   MEMORIES
+   ============================================================ */
+
+.memories-section {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.memory-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
+}
+
+.memory-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 5px solid white;
+
+  background: black;
+
+  box-shadow: 10px 10px 0 var(--red);
+
+  transition: 0.4s;
+}
+
+.memory-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.memory-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.memory-card:hover {
+  transform: rotate(0) scale(1.03);
+}
+
+.memory-card img {
+  width: 100%;
+
+  height: 400px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.memory-caption {
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+
+  padding: 25px;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.memory-caption span {
+  color: #ffdc00;
+
+  font-family: "Bangers", cursive;
+}
+
+.memory-caption h3 {
+  font-family: "Bangers", cursive;
+
+  font-size: 30px;
+}
+
+.memory-caption p {
+  font-size: 13px;
+
+  color: #ccc;
+}
+
+.comic-word {
+  position: absolute;
+
+  top: 20px;
+
+  right: 20px;
+
+  z-index: 2;
+
+  background: #ffd400;
+
+  color: black;
+
+  padding: 8px 15px;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 22px;
+
+  transform: rotate(7deg);
+}
+
+/* ============================================================
+   SUPERPOWERS
+   ============================================================ */
+
+.powers-section {
+  background: linear-gradient(rgba(4, 15, 40, 0.8), rgba(0, 0, 0, 0.9));
+}
+
+.powers-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.power-card {
+  position: relative;
+
+  padding: 45px 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.power-card:hover {
+  transform: translateY(-10px);
+
+  border-color: var(--red);
+}
+
+.power-number {
+  color: var(--red);
+
+  font-family: "Bangers", cursive;
+
+  font-size: 25px;
+}
+
+.power-icon {
+  font-size: 55px;
+
+  margin: 20px 0;
+}
+
+.power-card h3 {
+  font-family: "Bangers", cursive;
+
+  font-size: 32px;
+}
+
+.power-card p {
+  color: #aaa;
+
+  line-height: 1.8;
+
+  margin-top: 15px;
+}
+
+/* ============================================================
+   MISSION
+   ============================================================ */
+
+.mission-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.mission-box {
+  max-width: 600px;
+
+  width: 100%;
+
+  padding: 60px 30px;
+
+  text-align: center;
+
+  background: #0b0b0b;
+
+  border: 4px solid var(--red);
+
+  box-shadow: 10px 10px 0 var(--blue);
+}
+
+.mission-icon {
+  font-size: 80px;
+}
+
+.mission-box h3 {
+  font-family: "Bangers", cursive;
+
+  font-size: 40px;
+
+  margin: 20px 0;
+}
+
+.mission-box p {
+  color: #aaa;
+
+  line-height: 1.8;
+}
+
+.mission-counter {
+  font-family: "Bangers", cursive;
+
+  font-size: 60px;
+
+  color: var(--red);
+
+  margin: 30px 0;
+}
+
+.mission-status {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border: 2px solid #555;
+
+  font-family: "Bangers", cursive;
+}
+
+.mission-status.complete {
+  background: var(--red);
+
+  border-color: white;
+}
+
+/* ============================================================
+   HIDDEN WEBS
+   ============================================================ */
+
+.hidden-web {
+  position: absolute;
+
+  z-index: 50;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  opacity: 0.35;
+
+  transition: 0.3s;
+}
+
+.hidden-web:hover {
+  opacity: 1;
+
+  transform: scale(1.3);
+}
+
+.hidden-web.found {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.web-one {
+  top: 145%;
+  left: 8%;
+}
+
+.web-two {
+  top: 225%;
+  right: 10%;
+}
+
+.web-three {
+  top: 315%;
+  left: 12%;
+}
+
+.web-four {
+  top: 400%;
+  right: 15%;
+}
+
+.web-five {
+  top: 480%;
+  left: 50%;
+}
+
+/* ============================================================
+   WISH
+   ============================================================ */
+
+.wish-section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.wish-content {
+  max-width: 700px;
+}
+
+.big-moon {
+  font-size: 100px;
+
+  margin-bottom: 20px;
+
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+}
+
+.wish-content > p {
+  color: #bbb;
+
+  line-height: 2;
+
+  margin-bottom: 15px;
+}
+
+.wish-button {
+  margin-top: 30px;
+
+  padding: 15px 30px;
+
+  background: var(--blue);
+
+  border: 3px solid white;
+
+  color: white;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow: 7px 7px 0 black;
+}
+
+.wish-button:hover {
+  background: var(--red);
+}
+
+/* ============================================================
+   BIRTHDAY REVEAL
+   ============================================================ */
+
+.birthday-reveal {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.15), transparent 60%);
+}
+
+.explosion {
+  font-size: 100px;
+
+  animation: explosionPulse 2s infinite;
+}
+
+@keyframes explosionPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.birthday-reveal > p {
+  letter-spacing: 5px;
+
+  color: #aaa;
+}
+
+.birthday-reveal h2 {
+  max-width: 800px;
+
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(45px, 7vw, 80px);
+
+  margin: 20px 0;
+}
+
+.pause-text {
+  font-family: "Bangers", cursive;
+
+  font-size: 40px;
+
+  color: var(--red);
+
+  margin: 30px;
+}
+
+.birthday-final {
+  margin-top: 30px;
+}
+
+.cake {
+  font-size: 80px;
+}
+
+.birthday-final h1 {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(60px, 10vw, 120px);
+
+  line-height: 0.9;
+
+  text-shadow: 7px 7px 0 black;
+}
+
+.birthday-final h1 span {
+  display: block;
+
+  color: var(--red);
+}
+
+.birthday-final h3 {
+  color: #2b91ff;
+
+  font-family: "Bangers", cursive;
+
+  font-size: 45px;
+
+  letter-spacing: 8px;
+
+  margin: 20px 0;
+}
+
+.birthday-final p {
+  color: #aaa;
+}
+
+/* ============================================================
+   LETTER
+   ============================================================ */
+
+.letter-section {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.letter-card {
+  max-width: 750px;
+
+  padding: 60px;
+
+  background: #f3f0df;
+
+  color: #111;
+
+  border: 6px solid black;
+
+  box-shadow: 15px 15px 0 var(--red);
+
+  transform: rotate(-1deg);
+}
+
+.letter-icon {
+  font-size: 60px;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.letter-card .section-title {
+  margin-bottom: 35px;
+}
+
+.letter-card .section-title h2 {
+  color: #111;
+
+  text-shadow: none;
+}
+
+.letter-content p {
+  line-height: 2;
+
+  margin-bottom: 20px;
+}
+
+.final-message {
+  font-family: "Bangers", cursive;
+
+  color: var(--red);
+
+  font-size: 35px;
+
+  text-align: center;
+
+  margin-top: 40px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.swinging-spider {
+  font-size: 70px;
+
+  animation: swingFooter 3s ease-in-out infinite;
+}
+
+@keyframes swingFooter {
+  0%,
+  100% {
+    transform: translateY(-20px) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(20px) rotate(8deg);
+  }
+}
+
+.footer-web {
+  font-size: 120px;
+
+  opacity: 0.15;
+
+  position: absolute;
+}
+
+footer h2 {
+  font-family: "Bangers", cursive;
+
+  font-size: clamp(45px, 7vw, 80px);
+
+  line-height: 0.95;
+
+  margin: 30px 0;
+}
+
+footer p {
+  color: var(--red);
+
+  font-family: "Bangers", cursive;
+
+  font-size: 30px;
+}
+
+footer span {
+  margin-top: 30px;
+
+  color: #aaa;
+}
+
+footer small {
+  color: #555;
+
+  margin-top: 10px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 800px) {
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .powers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spider {
+    left: 5%;
+  }
+
+  .web-decoration {
+    font-size: 100px;
+  }
+
+  .comic-panel {
+    padding: 50px 25px;
+  }
+
+  .letter-card {
+    padding: 40px 25px;
+  }
+
+  .memory-card img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 75px;
+  }
+
+  .birthday-name {
+    font-size: 38px;
+  }
+
+  .section-title h2 {
+    font-size: 48px;
+  }
+
+  .comic-panel h3 {
+    font-size: 35px;
+  }
+
+  .moon {
+    width: 80px;
+
+    height: 80px;
+
+    right: 8%;
+  }
+
+  .birthday-final h1 {
+    font-size: 65px;
+  }
+
+  .birthday-final h3 {
+    font-size: 35px;
+  }
+}
